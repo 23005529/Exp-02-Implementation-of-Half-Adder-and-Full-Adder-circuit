@@ -1,4 +1,6 @@
-# Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit
+NAME : ALIYA SHEEMA N
+REGISTER NO : 23005529
+# Exp 02 Implementation of Half Adder and Full Adder circuit
 
 # Implementation-of-Half-Adder-and-Full-Adder-circuit
 ### AIM:
@@ -20,35 +22,52 @@ Full adder is a digital circuit used to calculate the sum of three binary bits. 
 
 Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = AB + ACin + BCin
 
- ![image](https://user-images.githubusercontent.com/36288975/163552156-a13e5a56-c638-4110-97d9-8896907c8d25.png)
-
-#### Figure -01 HALF ADDER 
-
-
-![image](https://user-images.githubusercontent.com/36288975/163552057-b3547877-6d07-45b4-b7e0-bcfebfad9e1d.png)
-
-#### Figure -02 FULL ADDER 
-
 ### Procedure
 
 Connect the supply (+5V) to the circuit
 Switch ON the main switch
 If the output is 1, then the led glows.
-### 
-Program:
-/*
-Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-Logic symbol & Truthtable
-RTL realization
+### Program
+### Half Adder
+module halfadder(sum,a,b,carry);
 
-### Output:
-### RTL
-### TIMING DIAGRAM
+input a,b;
 
+output sum,carry;
+
+xor (sum,a,b);
+
+and (carry ,a,b);
+
+endmodule 
+
+### RTL realization
+![ha rtl](https://github.com/23005529/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/139842207/89cd67ee-8a78-4a47-91e0-b286abafda32)
 
 ### TRUTH TABLE 
+![ha tt](https://github.com/23005529/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/139842207/5518341a-dfdd-4eda-99b5-3ee416500f7d)
+### WAVEFORM
+![wf ha](https://github.com/23005529/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/139842207/3457e5e9-786f-4d98-b56b-6bb7cdd1d4ab)
 
+### Program
+### Full Adder
+module fulladder(a,b,c,sum,carry);
+
+input a,b,c;
+
+output sum, carry;
+
+xor(sum,a,b,c);
+
+assign carry=a&b | b&c | a&c;
+
+endmodule 
+### RTL realization
+![fa rtl](https://github.com/23005529/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/139842207/0e710467-2979-4b4d-ba96-9f9519c02e63)
+### TRUTH TABLE 
+![fa tt](https://github.com/23005529/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/139842207/ee508db8-9b21-4d77-9a06-76c3d7a0d69c)
+### WAVEFORM
+![wf fa](https://github.com/23005529/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/139842207/6b778ad7-807a-4955-aa1b-475f7997b39f)
 ### Result:
+Thus the given full adder and half adder are verified using verilog programming.
+
